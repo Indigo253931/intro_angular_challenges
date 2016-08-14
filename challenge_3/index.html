@@ -81,12 +81,12 @@
     <h4>Exercise #2:</h4>
     <p>Instant Math!</p>
     <p>Can you get these simple calculators to work using only a view model (ng-model)?</p>
-    <div>
-      <input type="number"> + <input type="number"> = {{ "?" }}
+    <div ng-model="obj">
+      <input type="number" ng-model="obj.left"> + <input type="number" ng-model="obj.right"> = {{ obj.left + obj.right || 0 }}
     </div>
 
-    <div>
-      <input type="number"> * <input type="number"> = {{ "?" }}
+    <div ng-model="obj">
+      <input type="number" ng-model="obj.left"> * <input type="number" ng-model="obj.right"> = {{ obj.left * obj.right || 0 }}
     </div>
   </section>
 
@@ -101,7 +101,7 @@
       n months.
     </p>
 
-    <div> <!-- HINT: add "loanController as loan" here -->
+    <div data-ng-controller="loanController as loan"> <!-- HINT: add "loanController as loan" here -->
           <!-- DON'T MODIFY ANYTHING ELSE -->
       <div class="form-group">
         <label>Loan Amount:</label>
@@ -125,18 +125,18 @@
         <tbody>
           <tr>
             <th>Month 1</th>
-            <td>${{loan.month(1).accrued_interest}}</td>
-            <td>${{loan.month(1).total_balance}}</td>
+            <td>${{loan.month(1).accrued_interest | currency}}</td>
+            <td>${{loan.month(1).total_balance | currency}}</td>
           </tr>
           <tr>
             <th>Month 2</th>
-            <td>${{loan.month(2).accrued_interest}}</td>
-            <td>${{loan.month(2).total_balance}}</td>
+            <td>${{loan.month(2).accrued_interest | currency}}</td>
+            <td>${{loan.month(2).total_balance | currency}}</td>
           </tr>
           <tr>
             <th>Month 12</th>
-            <td>${{loan.month(12).accrued_interest}}</td>
-            <td>${{loan.month(12).total_balance}}</td>
+            <td>${{loan.month(12).accrued_interest | currency}}</td>
+            <td>${{loan.month(12).total_balance | currency}}</td>
           </tr>
         </tbody>
       </table>
