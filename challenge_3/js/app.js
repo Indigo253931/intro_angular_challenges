@@ -1,7 +1,7 @@
 console.log('challenge #3 -- app.js loaded!');
 
-// var app = angular.module("appThree", []);
-// app.controller("infoController", infoController)
+ var app = angular.module("appThree", []);
+ app.controller("infoController", infoController)
 
 // function infoController(){
 //   this.name = "Jon Doe"; // default name
